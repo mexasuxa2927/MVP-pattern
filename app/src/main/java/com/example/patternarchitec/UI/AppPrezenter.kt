@@ -1,26 +1,27 @@
 package com.example.patternarchitec.UI
 
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.example.patternarchitec.ModelUser
 
-class AppPrezenter {
+class AppPrezenter : ViewModel() {
 
-        var appView :AppView
+    fun getAppName():ModelUser{
 
-        constructor(appView: AppView){
-            this.appView = appView
-        }
+        return  ModelUser("Mexa","12")
 
-
-        fun getAppFromModel ():ModelUser{
-            val modelUser=ModelUser("Mexa","15")
-            return modelUser
-
-        }
+    }
+    var  multebledata:MutableLiveData<String> = MutableLiveData<String>()
 
 
-        fun getAppDetaile(){
-            appView.ongetAppName(getAppFromModel().getName())
-        }
+    fun getAppNameData() {
+
+        val string :String  = getAppName().getName()
+        multebledata.value = string
+
+
+    }
+
 
 
 }

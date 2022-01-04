@@ -2,18 +2,24 @@ package com.example.patternarchitec
 
  class ModelUser(){
 
-     var Name :String = "null"
-     var age :String =  "null"
+     var Name :String = ""
+     var Age  :String = ""
 
-     constructor(Name1 :String, age1:String) : this() {
-         this.Name = Name1
-         this.age =  age1
+
+     constructor(Name:String,Age :String) : this() {
+         this.Name = Name
+         this.Age  = Age
      }
 
 
      @JvmName("getName1")
-     fun getName(): String {
-         return Name
+     fun getName():String{
+         return this.Name
+     }
+
+     @JvmName("getAge1")
+     fun getAge():String{
+         return this.Age
      }
 
 
